@@ -1,0 +1,36 @@
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+bg
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+0
+
+# Size of the map, in tiles.
+!size
+16x9
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete_dark
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+8-g1/2,4

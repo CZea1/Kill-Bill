@@ -1,0 +1,51 @@
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+spawn
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+69
+
+# Size of the map, in tiles.
+!size
+10x10
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_wooden
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=5,0 4,0 9,4 9,5 4,9 5,9 0,4 0,5
+tl=wall_CobTopLeft
+t=wall_CobHorizontalEdge
+tr=wall_CobTopRight
+l=wall_CobVerticalEdge
+r=wall_CobVerticalEdge
+bl=wall_CobBotLeft
+b=wall_CobHorizontalEdge
+br=wall_CobBotRight
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+5,5 chest Chest[texture=items_chest,openedTexture=items_open_chest] # loot tables = something
+4,4 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+4,4 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+4,4 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+4,4 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+4,4 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+9,5 door Door[texture=misc_bill_gate_head,destination=test_map]
+9,4 door Door[texture=misc_bill_gate_head,destination=test_map]
+5,0 door Door[texture=misc_bill_gate_head,destination=test_map]
+4,0 door Door[texture=misc_bill_gate_head,destination=test_map]
+4,9 door Door[texture=misc_bill_gate_head,destination=test_map]
+5,9 door Door[texture=misc_bill_gate_head,destination=test_map]
+0,4 door Door[texture=misc_bill_gate_head,destination=test_map]
+0,5 door Door[texture=misc_bill_gate_head,destination=test_map]
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+1,1

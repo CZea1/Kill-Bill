@@ -1,0 +1,109 @@
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+lobby_1
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+0
+
+# Size of the map, in tiles.
+!size
+15x15
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=24,5 24,4 0,7 7,14 14,7 14,11 4,14 3,14 14,12 12,0 13,0
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+
+# Walls
+0,7 wall Tile[texture=wall_marble_l_sr]
+1,7 wall Tile[texture=wall_marble_b]
+2,7 wall Tile[texture=wall_marble_b]
+3,7 doorway MapObject[texture=wall_marble_b_endl,xSize=g5/16,ySize=g]
+5-g5/16,7 doorway MapObject[texture=wall_marble_b_endr,xSize=g5/16,ySize=g]
+5,7 wall Tile[texture=wall_marble_b]
+6,7 wall Tile[texture=wall_marble_b]
+7,7 wall Tile[texture=wall_marble_b_st]
+8,7 wall Tile[texture=wall_marble_b]
+9,7 wall Tile[texture=wall_marble_b]
+10,7 wall Tile[texture=wall_marble_b]
+11,7 wall Tile[texture=wall_marble_b]
+12,7 wall Tile[texture=wall_marble_b]
+13,7 wall Tile[texture=wall_marble_b]
+14,7 wall Tile[texture=wall_marble_r_sl]
+
+7,14 wall Tile[texture=wall_marble_t_sb]
+7,13 wall Tile[texture=wall_marble_l]
+7,12 wall Tile[texture=wall_marble_l]
+7,12-g5/16 doorway MapObject[texture=wall_marble_l_endt,xSize=g,ySize=g5/16]
+7,10 doorway MapObject[texture=wall_marble_l_endb,xSize=g,ySize=g5/16]
+7,9 wall Tile[texture=wall_marble_l]
+7,8 wall Tile[texture=wall_marble_l]
+
+3-g3/16,3 chair MapObject[texture=objects_chair,rotation=90,solid=false,collidable=false]
+4,1 table MapObject[xSize=g1/1, ySize=g4/1, solid=false, texture=objects_long_desk]
+4,3+g1/4 kb DroppedItem[item=Keyboard()]
+4+g3/16,3 mouse MapObject[texture=objects_mouse, rotation=270, solid=false, xSize=g1/6, ySize=g1/6]
+4+g1/8,3+g5/16 monitor MapObject[texture=objects_monitor, rotation=90, xSize=g, ySize=g1/4, collidable=false, solid=false]
+3,3 enemy1 MicrosoftEmployee[lines=welcome, attrs=invincible, rotation=270]
+
+2+g1/2,6+g1/8 enemy2 SecurityRobot[attrs=invincible, rotation=180]
+
+14,11 f1lobby_door1 Door[texture=door_right_b, openedTexture=door_right_b_u, destination=lobby_2,key=yes, spawn=1x6]
+14,12 f1lobby_door1 Door[texture=door_right_t, openedTexture=door_right_t_u, destination=lobby_2,key=yes, spawn=1x7]
+3,14 f1lobby_door2 Door[texture=door_top_l, openedTexture=door_top_l_u, destination=hallway, key=yes, spawn=2x1]
+4,14 f1lobby_door2 Door[texture=door_top_r, openedTexture=door_top_r_u, destination=hallway, key=yes, spawn=3x1]
+12,0 f1lobby_elevatorDoor Door[texture=door_bottom_l, openedTexture=door_bottom_l_u, key=yes, destination=elevator_f1_f2, spawn=1x2+g1/2]
+13,0 f1lobby_elevatorDoor Door[texture=door_bottom_r, openedTexture=door_bottom_r_u, key=yes, destination=elevator_f1_f2, spawn=1x2+g1/2]
+13-g3/16,6+g4/16 vend Chest[texture=objects_vending_machine, openedTexture=objects_vending_machine_opened, lootTable=vending_machine]
+14,6 wall Tile[texture=wall_marble_r]
+14,7 wall Tile[texture=wall_marble_r_sl]
+
+11+g5/16,1+g5/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+11,1 plant MapObject[texture=objects_floor_plant, collidable=false]
+
+11+g5/16,6+g5/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+11,6 plant MapObject[texture=objects_floor_tree, collidable=false]
+
+6+g5/16,8+g5/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+6,8 plant MapObject[texture=objects_floor_plant, collidable=false]
+
+8+g5/16,13+g5/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+8,13 plant MapObject[texture=objects_floor_tree, collidable=false]
+
+1+g5/16,8+g5/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+1,8 plant MapObject[texture=objects_floor_plant, collidable=false]
+
+1,10 table MapObject[texture=objects_long_desk, solid=false, ySize=g3/1]
+10,8 table MapObject[texture=desks_wood_h_2, solid=false, xSize=g2/1]
+
+
+10+g1/2,8+g7/16 monitor MapObject[texture=objects_monitor, xSize=g, ySize=g1/4, collidable=false, solid=false]
+
+13,10 enemy3 SecurityRobot[attrs=invincible, rotation=90]
+
+1,12 chest Chest[lootTable=basic_weapon, texture=items_chest_r, openedTexture=items_chest_r_o]
+
+!drops
+Key[to=f1lobby_door1]
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+12+g1/2,1

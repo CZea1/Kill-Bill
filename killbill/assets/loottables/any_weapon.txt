@@ -1,0 +1,7 @@
+# Random weapon, but some OP ones are rare. Use this later in the game.
+auto Axe[]
+auto GreatSword[]
+auto Hammer[]
+0.1 PenguinLauncher[]
+0.1 Plushie[]
+auto Spear[]

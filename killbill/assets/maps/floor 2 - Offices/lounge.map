@@ -1,0 +1,82 @@
+# _____TODO_____
+# - fill with walls
+# - place doors 
+# - size map
+
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+lounge
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+0203
+
+# Size of the map, in tiles.
+!size
+10x8
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=3,4 4,4 4,7 5,7
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+#
+# ____Examples____
+# 5,5 enemy1 Entity[texture=misc_testenemy,attrs=move_towards_player,health=20,reach=1] 
+# 3,3 chest Chest[texture=items_chest,openedTexture=items_open_chest] 
+# 4,4 door Door[texture=misc_bill_gate_head,destination=testmap2]
+!objects
+# ___Walls___
+
+# ___Doors___
+5,7 door Door[texture=door_top_r_u,destination=office_1,spawn=12+g1/2x1]
+4,7 door Door[texture=door_top_l_u,destination=office_1,spawn=12+g1/2x1]
+
+1-g3/16,6+g4/16 vend Chest[texture=objects_vending_machine, openedTexture=objects_vending_machine_opened, lootTable=vending_machine]
+2-g3/16,6+g4/16 vend Chest[texture=objects_vending_machine, openedTexture=objects_vending_machine_opened, lootTable=vending_machine]
+3-g3/16,6+g4/16 vend Chest[texture=objects_vending_machine, openedTexture=objects_vending_machine_opened, lootTable=vending_machine]
+6+g4/16,6+g3/16 cabinet MapObject[texture=objects_filing_cabinet]
+7,6+g3/16 cabinet MapObject[texture=objects_filing_cabinet]
+8,6+g4/16 chest Chest[texture=items_chest,openedTexture=items_open_chest, lootTable=basic_weapon]
+8,1 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1]
+6-g2/16,1 couch MapObject[texture=objects_couch_h3,xSize=g1/1,ySize=g3/1, solid=false]
+2,4 table MapObject[texture=objects_ms_table]
+4,2 table MapObject[texture=objects_ms_table]
+3,4 chair MapObject[texture=objects_chair, collidable=false, rotation=270, solid=false]
+1,4 chair MapObject[texture=objects_chair, collidable=false, rotation=90, solid=false]
+3,2 chair MapObject[texture=objects_chair, collidable=false, rotation=90, solid=false]  
+4,1 chair MapObject[texture=objects_chair, collidable=false, rotation=180, solid=false]
+8-g8/16,2+g2/16 tv MapObject[texture=objects_monitor,rotation=90,xSize=g2/1, ySize=g2/4]
+
+
+
+3,3 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=270]
+
+
+
+# ___Enemies___
+
+# ___Loot___
+
+# What drops when last enemy dies
+!drops
+Key[to=elevator_f3_door]
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+3,3

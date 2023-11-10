@@ -1,0 +1,60 @@
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+lobby_2
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+1
+
+# Size of the map, in tiles.
+!size
+9x11 # I swear this isn't intentional
+
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=0,6 0,7
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+
+# Make it so when go back through this door, spawn in lobby at 13,11 (by door)
+0,6 door Door[texture=door_left_b_u,destination=lobby_1,spawn=13x11]
+0,7 door Door[texture=door_left_t_u,destination=lobby_1,spawn=13x12]
+
+3,3 table MapObject[texture=objects_table,xSize=g3/1,ySize=g5/1,solid=false]
+
+6,6 chair MapObject[texture=objects_chair,rotation=270,solid=false,collidable=false]
+6,6 msemp MicrosoftEmployee[attrs=move_towards_player]
+6,5 chair MapObject[texture=objects_chair,rotation=270,solid=false,collidable=false]
+6,4 chair MapObject[texture=objects_chair,rotation=270,solid=false,collidable=false]
+6,4 msemp MicrosoftEmployee[attrs=move_towards_player]
+
+2,6 chair MapObject[texture=objects_chair,rotation=90,solid=false,collidable=false]
+2,5 chair MapObject[texture=objects_chair,rotation=90,solid=false,collidable=false]
+2,4 chair MapObject[texture=objects_chair,rotation=90,solid=false,collidable=false]
+
+4,8 chair MapObject[texture=objects_chair,solid=false,collidable=false]
+4,2 chair MapObject[texture=objects_chair,rotation=180,solid=false,collidable=false]
+4,2 msemp MicrosoftEmployee[attrs=move_towards_player]
+
+!drops
+Key[to=f1lobby_door2]
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+1,11+g1/2

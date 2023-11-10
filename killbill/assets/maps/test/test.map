@@ -1,0 +1,49 @@
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+test_map
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+0
+
+# Size of the map, in tiles.
+!size
+25x25
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+fit floor_WoodFloor
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=24,5 24,4
+tl=wall_CobTopLeft
+t=wall_CobHorizontalEdge
+tr=wall_CobTopRight
+l=wall_CobVerticalEdge
+r=wall_CobVerticalEdge
+bl=wall_CobBotLeft
+b=wall_CobHorizontalEdge
+br=wall_CobBotRight
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+# 4,4 wall Tile[texture=misc_apple] # test comment (update: it works :) )
+5,5 enemy1 Entity[texture=misc_testenemy,attrs=move_towards_player,health=20,reach=1]
+8,8 enemy2 Entity[texture=misc_testenemy,attrs=move_towards_player,health=20,reach=1]
+3,3 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+3,6 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+3,9 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+3,12 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+3,15 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+3,18 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+3,21 chest Chest[texture=items_chest,openedTexture=items_open_chest]
+24,4 door Door[texture=misc_bill_gate_head,destination=testmap2]
+24,5 door Door[texture=misc_bill_gate_head,destination=testmap2]
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+1,1

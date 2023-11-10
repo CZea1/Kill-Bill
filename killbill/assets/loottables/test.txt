@@ -1,0 +1,2 @@
+0.5 PenguinLauncher[]
+0.5 Key[to=door]

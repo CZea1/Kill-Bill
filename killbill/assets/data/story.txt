@@ -1,0 +1,33 @@
+story_1 3.120 Hello. I am on my way to your home.
+story_2 2.707 Very slowly, but I will get there.
+story_3 4.455 I will arrive at your home, and then I will touch your computer.
+story_4 2.443 Place a key for me under the mat.
+story_5 4.057 If you do not have a mat, put a key for me in your mailbox.
+story_6 3.947 If you do not have a mailbox, leave your door unlocked.
+story_7 4.226 If your door is locked, I will gain access to your home anyway.
+story_8 5.433 I will touch your computer with my warm hand. I will touch its front and its back.
+story_9 1.803 Do not try to stop me.
+story_10 4.276 If you try to stop me, I will still touch your computer.
+story_11 3.519 I do not care if your home is messy, or if it is neat.
+story_12 2.778 I do not care what kind of computer you have.
+story_13 4.915 If you think I will be angry that you have an Apple computer: no.
+story_14 4.246 I care about all computers. I do not care about you.
+#story_15 1.774 I will touch your computer.
+story_16 3.970 Do not point your eyes at mine while I touch your computer.
+story_17 3.403 You do not need to watch as I touch your computer.
+story_18 3.083 If you speak to me, I will scream.
+story_19 1.716 Everything is okay.
+story_20 4.072 Put your pet in its box. Go to your bedroom and smile.
+story_21 2.051 I will not be long.
+story_22 2.661 Do not worry. I will not harm your files.
+story_23 4.174 I will not press hard on important keys, like shift or num lock.
+story_24 3.170 I will only touch the outside of your computer.
+story_25 4.450 My touch is light. My hand is wet but not too wet for a computer.
+story_26 4.174 My hand is warm. If you touch my hand, I will scream.
+story_27 2.560 If I scream, it is fine.
+story_28 5.264 You will know I am finished touching your computer when I say, 'I am finished touching the computer.'
+story_29 4.508 You will know that I am ready to leave your home when I exit your home.
+story_30 1.483 I will not return.
+story_31 3.301 I am close by now. I am on foot.
+story_32 2.065 Are you ready? It does not matter.
+story_33 2.734 Hello. I am Bill Gates.

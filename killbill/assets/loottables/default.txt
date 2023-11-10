@@ -1,0 +1,2 @@
+# If you get a House MD, you didn't assign a valid loot table.
+auto Item[texture=misc_house]

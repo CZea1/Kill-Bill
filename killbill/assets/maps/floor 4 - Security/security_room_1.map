@@ -1,0 +1,120 @@
+# _____TODO_____
+# - fill with walls
+# - place doors 
+# - size map
+
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+security_room_1
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+0405
+
+# Size of the map, in tiles.
+!size
+27x6  
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=0,2 0,3 26,2 26,3
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+#
+# ____Examples____
+# 5,5 enemy1 Entity[texture=misc_testenemy,attrs=move_towards_player,health=20,reach=1] 
+# 3,3 chest Chest[texture=items_chest,openedTexture=items_open_chest] 
+# 4,4 door Door[texture=misc_bill_gate_head,destination=testmap2]
+!objects
+# ___Doors___
+0,2 door Door[texture=door_left_b_u, destination=elevator_f4_f3, spawn=4x2+g1/2]
+0,3 door Door[texture=door_left_t_u, destination=elevator_f4_f3, spawn=4x2+g1/2]
+
+26,2 elevator_f4_f5 Door[texture=door_right_b,openedTexture=door_right_b_u,key=yes, destination=elevator_f4_f5, spawn=1x2+g1/2]
+26,3 elevator_f4_f5 Door[texture=door_right_t,openedTexture=door_right_t_u,key=yes, destination=elevator_f4_f5, spawn=1x2+g1/2]
+
+#___Plants Top____
+2+g5/16,4+g7/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+2-g0/16,4+g2/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+4+g5/16,4+g7/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+4-g0/16,4+g2/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+7+g5/16,4+g7/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+7-g0/16,4+g2/16 plant MapObject[texture=objects_floor_plant,collidable=false]
+9+g5/16,4+g7/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+9-g0/16,4+g2/16 plant MapObject[texture=objects_floor_plant,collidable=false]
+12+g5/16,4+g7/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+12-g0/16,4+g2/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+14+g5/16,4+g7/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+14-g0/16,4+g2/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+17+g5/16,4+g7/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+17-g0/16,4+g2/16 plant MapObject[texture=objects_floor_plant,collidable=false]
+19+g5/16,4+g7/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+19-g0/16,4+g2/16 plant MapObject[texture=objects_floor_plant,collidable=false]
+22+g5/16,4+g7/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+22-g0/16,4+g2/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+24+g5/16,4+g7/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+24-g0/16,4+g2/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+
+#___Plants Bottom___
+2+g5/16,1+g4/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+2-g0/16,1-g1/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+4+g5/16,1+g4/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+4-g0/16,1-g1/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+7+g5/16,1+g4/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+7-g0/16,1-g1/16 plant MapObject[texture=objects_floor_plant,collidable=false]
+9+g5/16,1+g4/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+9-g0/16,1-g1/16 plant MapObject[texture=objects_floor_plant,collidable=false]
+12+g5/16,1+g4/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+12-g0/16,1-g1/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+14+g5/16,1+g4/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+14-g0/16,1-g1/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+17+g5/16,1+g4/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+17-g0/16,1-g1/16 plant MapObject[texture=objects_floor_plant,collidable=false]
+19+g5/16,1+g4/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+19-g0/16,1-g1/16 plant MapObject[texture=objects_floor_plant,collidable=false]
+22+g5/16,1+g4/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+22-g0/16,1-g1/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+24+g5/16,1+g4/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+24-g0/16,1-g1/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+
+
+# ___Top Enemies___
+3,4 enemy2 SecurityRobot[attrs=move_towards_player, rotation=180]
+8,4 enemy2 SecurityRobot[attrs=move_towards_player, rotation=180]
+13,4 enemy2 SecurityRobot[attrs=move_towards_player, rotation=180]
+18,4 enemy2 SecurityRobot[attrs=move_towards_player, rotation=180]
+23,4 enemy2 SecurityRobot[attrs=move_towards_player, rotation=180]
+
+#___Bottom Enemies
+3,1 enemy2 SecurityRobot[attrs=move_towards_player, rotation=0]
+8,1 enemy2 SecurityRobot[attrs=move_towards_player, rotation=0]
+13,1 enemy2 SecurityRobot[attrs=move_towards_player, rotation=0]
+18,1 enemy2 SecurityRobot[attrs=move_towards_player, rotation=0]
+23,1 enemy2 SecurityRobot[attrs=move_towards_player, rotation=0]
+
+
+
+# ___Loot___
+
+# What drops when last enemy dies
+!drops
+Key[to=elevator_f4_f5]
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+1,1

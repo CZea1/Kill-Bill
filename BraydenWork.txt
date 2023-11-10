@@ -1,0 +1,89 @@
+2/14 - 
+Began learning file manipulation and handling using LibGDX gaming library
+https://libgdx.com/wiki/
+https://libgdx.com/wiki/file-handling
+Exploring the different possibilities of how to read in the weapons and their attributes (name & amount of damage)
+Possibility of using json
+Creating a class for weapons to represent their attributes
+https://www.geeksforgeeks.org/reading-text-file-into-java-hashmap/
+https://www.javatpoint.com/arraylist-vs-hashmap-in-java#:~:text=The%20difference%20between%20ArrayList%20and,implementation%2C%20function%2C%20and%20usage.
+
+2/21 -
+This week after communicating with team members further research, a json file is how
+I've decided to implement the weapons and their attributes. Each weapon will have an ID number
+identifier so that a randomizer can choose a random number and the weapon corresponding to that
+number will be chosen. They will also have general attributes, such as a name, a strength, and the
+path to the local file relating to its texture. This way, when it is given to the player, it can call
+a method to update the texture with the texture path. Spent most of today trying to understand how json
+files are setup and what ways you can edit them. It's looking like I need to download a java library and
+add it to the classpath to be able to use it. Created a sample json file in the src folder to test
+Next week I would like to get a good test set up so I can begin to implement the actual weapons into the game
+and make sure that they are updating.
+The biggest issue is that I have no clue how to read from a json file or how to setup a basic json file. I
+attempted it, but don't have any way to test the file until I get that additional libraries
+https://blog.hubspot.com/website/json-files
+https://fileinfo.com/extension/json
+https://stackoverflow.com/questions/68133962/how-to-get-random-replies-for-a-input-from-json-in-python
+https://www.tutorialspoint.com/json/json_java_example.htm#
+https://www.javatpoint.com/java-json-example
+
+2/28 -
+Outside of class before today, I did a bunch of messing around with a json file and in the process learned some
+things that ended up leading me in another direction. In class today, I went ahead and made an enum class, Weapon.java
+that will contain all the different types of weapons. Right now, there are 5 with full intentions of creating more, once tests
+can be done to prove that the randomization method works. The similarly named Weapons.java is a class that has a constructor and
+a few methods. These methods do a few actions, such as choosing a random weapon, initializing that weapon's name and damage
+value, and then two accessor methods that return the string name and integer damage. Next week, the group plans to help get
+the correct structures in place to run some tests with those classes and code to see if the randomization and initializing values
+works or needs to be debugged and fixed.
+
+3/7 -
+We have a "ToDo.md" now, so I decided to look at that. I chose to continue on the topic of loottables and begin making a chest object
+which when interacted with with give the player a weapon. (This is one of the "structures" previously mentioned to test the weapons classes)
+To do this, on the collision with the chest, it will choose a random weapon to give the player, call a method that updates the player's 
+texture to holding the current weapon. Eventually there will be an inventory and you can choose from the weapons that you have picked 
+up, but at the moment everytime a new weapon is acquired, the texture will change to holding that obtained weapon. There are quite 
+a few places to add in the new object, but eventually the chest was added as an object and renders on the map as an actual collidable 
+object. Collisions are a little glitched at the moment, so testing it was an issue, but it is one of the very first things to be 
+fixed and tried in class next week.
+
+3/21 -
+Spent a majority of class working with Camden on debugging how weapons are going to show up on the player character. Between the last
+update and now, Camden created a working interactable inventory so we are re programming how the textures are going to update upon interacting
+with the chest. Now, the character will remain the same throughout the whole process, instead of updating the whole character every time
+a new weapon is picked up. There is a separate texture attached to the texture of the character that will be changing with each new weapon
+added to the inventory. For all of this to work, we re coded how the class chooses the random weapon, how the textures and other attributes
+are assigned and the location of all the weapon-related information into individual weapon classes. Each new weapon will now have it's own
+class with all it's respective information detailed in there. I created each weapon java file and added some code to the Chest.java so that
+in the future when all the weapons are debugged, will update the texture of the hotbar and the on screen character.
+
+3/28 -
+Today I took a bit of a turn after viewing the ToDo.md and decided to work on creating a main menu screen. I had Aaron create some buttons
+for me since he is more in charge of the graphics and spent the time in class following a tutorial on how to get the buttons to show up
+and hovering mechanics. The hovering mechanics were more complex than anticipated and even after having Camden help me, it was decided to
+create a new object of an element to determine coordinates, which has not yet been completely implemented so most of the work that was done
+today was initializing the new screen and watching the tutorial. Next week will be furthering the screen, including keypresses for the play 
+and exit buttons.
+https://www.youtube.com/watch?v=67ZCQt8QpNA -- tutorial link
+
+4/3 -
+Today I had to leave early from class and it was demo day, so I did not get any additional work done inside of the class hours. Plans
+for next week are to look at what we need to finish by the third and final demo presentation and jump into those features so that they
+are completed and we can then start implementing some of the extra features that we listed.
+
+4/11 - 
+Today I worked on creating a new screen, for when the player wants to pause the game. When in the menu, you can choose to resume, or quit.
+I also edited one of the screens that Caleb worked on, the death screen. Originially, you could only quit after being killed in the game.
+Now you can go back to the main menu, and restart the game again. I am going to change the buttons on this screen to say "Restart" and "Quit"
+respectively. Also need to make a function that regenerates the player, as currently when the map is refreshed, the player is not, meaning
+that you would keep all of your items and health would be 0, since there is no function to remove the items from the player inventory or
+reset the player health. Other than that, I just need to ask Aaron for some graphics for the Restart and Resume button (Resume for the pause menu
+screen) and implement them into their respective menus. Then I will choose another thing to do that is required for our final demo presentation.
+
+4/18 -
+Today I worked on creating a bunch of maps with Aaron. It is one of the last things that we need to get done before our final presentation
+and demo. We added some blank rooms and plan to do a lot of communicating over discord to finish them out. For our demo we had a bunch of rooms
+planned, so all we need to do is implement the idea and ensure that all the doors, chests, and enemies work as intended. We have a few
+other things to fix/add like door textures, some location finessing, and a few other minor things, but otherwise we are pretty set for the
+final demo.
+

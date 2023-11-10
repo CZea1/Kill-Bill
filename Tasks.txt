@@ -1,0 +1,48 @@
+This document contains some of the things we still have to do before the project is finished.
+It also has some useful things to check out as far as API implementation and such, which should
+make things a bit easier.
+
+
+
+--- LOOT TABLES ---
+We have a randomizer, but we don't want to make each chest give the player the same items. I implemented a way to load in a loot table name from the map file, which is currently unused, but if we modify the Chest's code to be able to draw other items (ie: less cool weapons, potions, etc) instead it would make for a much more logical progression.
+Pointers:
+- See onInteraction in objects.Chest for where this would happen.
+- There would be a String instance var, 'lootTable', which you could compare to some preset cases to choose items.
+- Two ways you can do this:
+    - Pre-defined loot tables: Find the name, use a hard-coded HashMap or list to grab a list of items that are in that loot table, then give the user one
+    - Weights: Store the loot tables in a basic txt file, with each item having a probability of being drawn. Make a random int from 0-100, check if the probability matches to draw that item.
+- See items.Weapon to see how items are generated on the fly -- specifically getRandomWeapon().
+
+--- PROJECTILE WEAPONS ---
+I'll be adding a Projectile map object later this week, hopefully. Make a doProjectileAttack() method in items.Weapon, and make a weapon that uses it.
+
+--- ENEMIES ---
+Make the Microsoft Employee enemy. It can extend the Entity class (see entities.enemies.Bill for how that works) -- default enemy, but it looks like a microsoft employee.
+We also need some ideas for other enemies -- some could launch projectiles, blow up (minecraft reference), etc...
+
+--- LEVEL DESIGN ---
+We said we'd have something like 30 levels -- make them. Everything we should need, excluding boss fights, should be ready (see test.map). Add comments for possible loot table changes or different enemies so we can add them in when they're ready.
+
+--- PAUSE MENU ---
+Make some Button elements (feel free to steal directly from screens.MenuScreen for this) -- exit, resume, that's it really. This can be virtually identical to the main menu.
+- Make a file named something like PauseScreen in screens folder
+- Steal all of the code from MenuScreen
+- Change the button textures and actions (all available in the constructor, button actions are in the strange `() -> {}` format after `new Button`)
+    - Unpause can do `game.setScreen(game.mapScreen)`
+- Make it so when the player presses Escape (that code is in `input.KeyChecker`, line 69 -- around the `if (wantToExit)` conditional), you call game.setScreen(game.pauseScreen)` -- and if they press it again (`if (game.getScreen() instanceof PauseScreen) game.setScreen(game.mapScreen)`), it resumes
+
+--- SOUND EFFECTS ---
+Sounds work very similarly to textures:
+- Get a sound: `Sound sound = game.soundStore.getSound("foldername_filenamewithoutextension")`
+- Play it: `sound.play()`
+Find a bunch of sound effects (wav or mp3) and add them in to various places in the game
+
+--- DESIGN STUFF ---
+Decide how we want the boss fight to look, and/or plan some of the levels.
+
+--- DIE SCREEN ---
+Very similar to pause screen. Make a new screen (DieScreen) which tells the player they lost, and has a button to return to the main menu.
+
+--- BSOD SCREEN ---
+Same thing, but it's just a blue screen of death for when you "win" the game. No buttons, no escape.

@@ -1,0 +1,57 @@
+# _____TODO_____
+# - change to elevator textures
+
+# Add background music
+
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+elevator_f2_f1
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+0101
+
+# Size of the map, in tiles.
+!size
+6x6
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+fit floor_elevator_medium
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=0,2 0,3 5,2 5,3
+tl=wall_elevator_tl
+t=wall_elevator_t
+tr=wall_elevator_tr
+l=wall_elevator_l
+r=wall_elevator_r
+bl=wall_elevator_bl
+b=wall_elevator_b
+br=wall_elevator_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+# ___Doors___
+0,2 elevdoor Door[texture=door_elevator_left_b,openedTexture=door_elevator_left_b_u,destination=lobby_1,spawn=12+g1/2x1]
+0,3 elevdoor Door[texture=door_elevator_left_t,openedTexture=door_elevator_left_t_u,destination=lobby_1,spawn=12+g1/2x1]
+5,2 elevdoor_enter Door[texture=door_elevator_right_b,openedTexture=door_elevator_right_b,destination=office_1,spawn=1x4+g1/2]
+5,3 elevdoor_enter Door[texture=door_elevator_right_t,openedTexture=door_elevator_right_t,destination=office_1,spawn=1x4+g1/2]
+
+# What drops when last enemy dies
+!drops
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+1,1
+
+!actions
+lock_doors elevdoor elevdoor_enter
+play elev main_elevatorAmbiance
+delay 4.5 # 13.5
+stop elev main_elevatorAmbiance
+unlock_doors elevdoor

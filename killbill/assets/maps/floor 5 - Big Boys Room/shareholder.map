@@ -1,0 +1,122 @@
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+shareholder
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+0394
+
+# Size of the map, in tiles.
+!size
+14x18
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=6,17 7,17 6,0 7,0
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+
+# reception door
+6,17 door Door[texture=door_top_l_u,destination=reception,spawn=5+g1/2x1]
+7,17 door Door[texture=door_top_r_u,destination=reception,spawn=5+g1/2x1]
+
+# boss room door
+6,0 boss_door Door[texture=door_bottom_l,openedTexture=door_bottom_l_u,key=yes,destination=billroom]
+7,0 boss_door Door[texture=door_bottom_r,openedTexture=door_bottom_r_u,key=yes,destination=billroom]
+
+# Walls
+
+3,7 shareholder Shareholder[]
+10,7 shareholder Shareholder[]
+3,9 shareholder Shareholder[]
+10,9 shareholder Shareholder[]
+3,11 shareholder Shareholder[]
+10,11 shareholder Shareholder[]
+3,13 shareholder Shareholder[]
+10,13 shareholder Shareholder[]
+
+
+5,6 table MapObject[texture=objects_shareholder_table, xSize=g4/1, ySize=g8/1, solid=false, collidable=true]
+7-g1/16,9-g3/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7+g4/16,10-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6,9-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6-g1/16,7-g3/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6+g4/16,8-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+5+g3/4,7-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6-g1/16,9-g3/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+5+g4/16,10-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+5,8-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6-g1/16,9-g3/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7+g4/16,8-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7,8-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+8+g4/16,7-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+8,9-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+
+7-g1/16,9-g3/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7+g4/16,8-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6,9-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6-g5/16,9-g7/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6+g12/16,8-g9/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+5+g3/4,8-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6+g7/16,9-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6+g8/16,9-g11/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6,8-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6+g1/16,7-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7+g9/16,9-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7,11-g5/10 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+8+g1/16,7-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+
+7-g1/16,12-g3/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7+g4/16,11-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6,10-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6-g1/16,12-g3/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6+g4/16,12-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+5+g3/4,11-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6-g1/16,10-g3/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+5+g4/16,10-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+5,12-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+6-g1/16,11-g3/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7+g4/16,10-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7,11-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+8+g4/16,11-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+8,12-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+
+6-g1/16,13-g3/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7+g4/16,13-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+7,12-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+8+g4/16,13-g6/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+8,13-g5/16 money MapObject[texture=items_money, xSize=g1/2, ySize=g1/2, collidable=false, solid=false]
+
+5+g3/4,10-g3/4 bag MapObject[texture=objects_bag_of_money1, xSize=g2/1, ySize=g2/1, collidable=false, solid=false]
+1+g1/2,14 bag MapObject[texture=objects_bag_of_money2, xSize=g2/1, ySize=g2/1, collidable=false, solid=false]
+1,15+g1/4 bag MapObject[texture=objects_bag_of_money, xSize=g2/1, ySize=g2/1, collidable=false, solid=false, rotation=180]
+11,1 bag MapObject[texture=objects_bag_of_money1, xSize=g2/1, ySize=g2/1, collidable=false, solid=false, rotation=90]
+2,1+g1/2 bag MapObject[texture=objects_bag_of_money2, xSize=g2/1, ySize=g2/1, collidable=false, solid=false]
+1,1 bag MapObject[texture=objects_bag_of_money, xSize=g2/1, ySize=g2/1, collidable=false, solid=false]
+11,15 bag MapObject[texture=objects_bag_of_money2, xSize=g2/1, ySize=g2/1, collidable=false, solid=false]
+8+g1/2,1+g1/2 bag MapObject[texture=objects_bag_of_money2, xSize=g2/1, ySize=g2/1, collidable=false, solid=false]
+
+# no drops 
+!drops
+Key[to=boss_door]
+
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+7,16

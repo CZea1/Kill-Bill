@@ -1,0 +1,1 @@
+swords: {name: "Wooden Sword", strength: "5"}

@@ -1,0 +1,51 @@
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+hallway
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+2
+
+# Size of the map, in tiles.
+!size
+6x10
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=2,0 2,9 3,0 3,9
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+2,0 door Door[texture=door_bottom_l_u,destination=lobby_1,spawn=3+g1/2x13]
+3,0 door Door[texture=door_bottom_r_u,destination=lobby_1,spawn=3+g1/2x13]
+2,9 door Door[texture=door_top_l_u,destination=loot_room_1]
+3,9 door Door[texture=door_top_r_u,destination=loot_room_1]
+2+g1/2,7 enemy1 MicrosoftEmployee[attrs=move_towards_player]
+
+1,1 plant MapObject[texture=objects_floor_plant, collidable=false]
+4,1 plant MapObject[texture=objects_floor_plant, collidable=false]
+1,8 table Tile[texture=objects_ms_table, solid=false]
+1+g1/12,8+g1/4 plant MapObject[texture=objects_plant_blue, solid=false, collidable=false, xSize=g3/4, ySize=g3/4]
+4,8 table Tile[texture=objects_ms_table, solid=false]
+4+g1/12,8+g1/4 plant MapObject[texture=objects_plant_blue, solid=false, collidable=false, xSize=g3/4, ySize=g3/4]
+
+!drops
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+2+g1/2,1

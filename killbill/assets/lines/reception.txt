@@ -1,0 +1,20 @@
+none auto Ah ha there you are Melinda!
+none auto How good is it to see you again?
+none auto How are you doing?
+none auto Oh sorry I forgot to tell you that Mr.Gates is waiting for you
+none auto Just this way
+none auto ...
+none 8.0
+none auto ...
+none auto You better not keep him waiting he sounded pretty upset
+none auto ...
+none 8.0 
+none auto ...
+none auto Come on go already!
+none auto ...
+none 8.0 
+none auto ...
+none auto LEAVE!!
+!hold Item[texture=weapons_hammer_held]
+!unattrall invincible
+!attrall move_towards_player

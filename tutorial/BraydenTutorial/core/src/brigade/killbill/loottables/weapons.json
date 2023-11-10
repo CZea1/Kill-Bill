@@ -1,0 +1,14 @@
+{
+	"weapons": [
+		{
+			"weaponID" : 1,
+			"wewaponName": "Wooden Sword",
+			"weaponDamage": 1,
+			"textureLocation": ""
+		},
+		{
+			
+
+		}
+	]
+}

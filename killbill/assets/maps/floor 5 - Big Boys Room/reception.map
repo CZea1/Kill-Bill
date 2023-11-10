@@ -1,0 +1,102 @@
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+reception
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+039493
+
+# Size of the map, in tiles.
+!size
+12x8
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=5,7 6,7 5,0 6,0
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+
+# shareholder door
+5,0 door Door[texture=door_bottom_l_u,destination=shareholder,spawn=6+g1/2x16]
+6,0 door Door[texture=door_bottom_r_u,destination=shareholder,spawn=6+g1/2x16]
+
+# elevator door
+5,7 door Door[texture=door_top_l_u,destination=elevator_f5_f4,spawn=4x2+g1/2]
+6,7 door Door[texture=door_top_r_u,destination=elevator_f5_f4,spawn=4x2+g1/2]
+
+#___Desk___
+4,4 desk MapObject[texture=objects_long_desk_h,xSize=g4/1,ySize=g1/1,solid=false]
+5+g8/16,3-g2/16 chair MapObject[texture=objects_chair,rotation=180, collidable=false,solid=false]
+3+g8/16,4+g5/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+3+g3/16,4 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+8+g2/16,4+g5/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+8-g3/16,4 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+5+g8/16,4+g9/16 monitor MapObject[texture=objects_monitor, rotation=180, xSize=g, ySize=g1/4, collidable=false]
+5+g9/16,4+g2/16 kb DroppedItem[item=Keyboard(), rotation=90]
+6+g3/16,4+g5/16 mouse MapObject[texture=objects_mouse, rotation=0, solid=false, xSize=g1/6, ySize=g1/6]
+
+#___Chest___
+7-g3/16,3+g5/16 chest Chest[lootTable=random_weapon, collidable=true]
+4+g3/16,3+g5/16 chest Chest[lootTable=random_weapon, collidable=true]
+
+#___Plants___
+4+g8/16,6+g5/16 pot MapObject[texture=objects_floor_tree_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+4+g3/16,6 plant MapObject[texture=objects_floor_tree, collidable=false, solid=true]
+7+g5/16,6+g5/16 pot MapObject[texture=objects_floor_tree_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+7,6 plant MapObject[texture=objects_floor_tree, collidable=false, solid=true]
+
+9+g5/16,6+g5/16 pot MapObject[texture=objects_floor_tree_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+9,6 plant MapObject[texture=objects_floor_tree, collidable=false, solid=true]
+10+g5/16,6+g5/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+10,6 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+10+g5/16,5+g5/16 pot MapObject[texture=objects_floor_tree_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+10,5 plant MapObject[texture=objects_floor_tree, collidable=false, solid=true]
+
+1+g5/16,5+g5/16 pot MapObject[texture=objects_floor_tree_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+1,5 plant MapObject[texture=objects_floor_tree, collidable=false, solid=true]
+1+g5/16,6+g5/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+1,6 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+2+g5/16,6+g5/16 pot MapObject[texture=objects_floor_tree_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+2,6 plant MapObject[texture=objects_floor_tree, collidable=false, solid=true]
+
+2+g5/16,1+g5/16 pot MapObject[texture=objects_floor_tree_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+2,1 plant MapObject[texture=objects_floor_tree, collidable=false, solid=true]
+1+g5/16,1+g5/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+1,1 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+1+g5/16,2+g5/16 pot MapObject[texture=objects_floor_tree_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+1,2 plant MapObject[texture=objects_floor_tree, collidable=false, solid=true]
+
+10+g5/16,2+g5/16 pot MapObject[texture=objects_floor_tree_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+10,2 plant MapObject[texture=objects_floor_tree, collidable=false, solid=true]
+10+g5/16,1+g5/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+10,1 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+9+g5/16,1+g5/16 pot MapObject[texture=objects_floor_tree_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+9,1 plant MapObject[texture=objects_floor_tree, collidable=false, solid=true]
+
+#___Enemies___
+5+g8/16,3 enemy1 MicrosoftEmployee[lines=reception,attrs=invincible,rotation=0]
+
+
+# no drops
+#!drops
+
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+2,2

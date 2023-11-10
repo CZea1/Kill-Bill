@@ -1,0 +1,6 @@
+# Use this early in the game. Weapons with weights assigned based on how good they are.
+0.2 Axe[]
+0.1 GreatSword[]
+0.2 Hammer[]
+0.4 Spear[]
+0.1 Plushie[]

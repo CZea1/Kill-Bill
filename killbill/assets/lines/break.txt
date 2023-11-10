@@ -1,0 +1,8 @@
+none auto Come on lady give me a break 
+none auto I'm not going back to work till after my smoke break
+none 5.0
+none auto I told you to give me a minute
+none auto THATS IT!!
+!hold Item[texture=weapons_hammer_held]
+!unattrall invincible
+!attrall move_towards_player

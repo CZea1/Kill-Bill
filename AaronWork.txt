@@ -1,0 +1,60 @@
+=== Questions ===
+~ Current weeks progress?
+~ Planned workload for next week?
+~ Current or potential blockers?
+
+=== Week 1 2/14/2023 ===
+- We got gradle and libGDX all setup
+- Went through a intro tutorial that was teaching different tools from the library
+- Will work on getting a playable character in the game
+
+=== Week 2 2/21/2023 ===
+- Created temporary player assets 
+- assisted in debugging collision issues 
+- Will work on creating map assets
+- Will work on general implementation of the assets into game
+
+=== Week 3 2/28/2023 ===
+- Created all the weapon assets 
+- Will work on map, enemy, and treasure chest assets
+- Will work on implementation of treasure chest
+- Current is issue most assets are not being used (will be worked on next week)
+
+=== Week 4 3/7/23 ===
+- Tried to figure out how to get enemies to face you when they are attacking
+- Created and implemented the enemies textures in the test map
+- Created and add the treasure chest to the test map
+- Will work on making the Microsoft HQ textures: different floors, walls, items
+- Will work on doing more research about enemy rotation	
+- Current issue is that I can't get the enemies to face the character when they attack you 
+
+=== Week 5 3/21/23 ===
+- I made explosions and hearts for Caleb and Camden's testing
+- I completely finished enemy rotation and it turns out the issue was with the way 
+  we recorded the angle of the enemy to the player
+- Will work on button textures for the start menu
+
+=== Week 6 3/28/23 ===
+- I created button textures for the start screen
+- I figured out and start creating map files
+- Will work on making more buttons and ui elements
+- Current Issue is figuring out Camnden's ui element methods
+
+=== Week 7 4/6/23 ===
+- Accidentally deleted the spawn map and had to figure out how to recover that from git
+- Worked on map files learned some new features Camden added to map files
+- demo stuff
+
+=== Week 8 4/11/23 ===
+- made a template for the elevator so it stays consistent between floors
+- I was sick so I didn't get much done and was just following everybody else and tried to help them where I could like the lose screen
+
+=== Week 9 4/18/23 ===
+- Modified keys and doors to make testing and running through levels easier
+- like adding more attributes so that can unlock all doors
+- fixed a bug where doors would reset lock state after going between them
+
+=== Week 10 4/25/23 ===
+- finishing up all the maps for the presentation and its gonna take a long time
+- not much more to work on 
+- that's it

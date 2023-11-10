@@ -1,0 +1,102 @@
+Week 1: 
+ * Played around with the software and wrote up some functions that can catch keyboard input
+ 
+    Part 2: 
+ * Wrote baseline functions to catch WASD inputs and also figured out how the color system works. Also figured out how to draw an image from an image file in the asset folder
+
+Week 2: 
+ * Moved character movement to the main game function and optimized it for multiple speeds.
+ * Still need to add monster/enemy movement ideas and physics. Waiting on Camden to figure out collision physics and for Aaron to make more sprites.
+
+Week 3: 
+ * Did this week:
+    - Added framework for character and enemy collision, also included the framework for a health system.
+    - current idea for health is to start at 3 and then you lose 1 every time you get hit. This can be represented by a heart picture on screen
+    - also added apple.png
+ * Still need to do: 
+    - Write out the rest of the health and player -> enemy collisions
+ * What prevents me from doing it:
+    - Need to write character enums to classify different types of collision from colliding with the wall vs colliding with an enemy vs colliding with a weapon
+
+Week 4:
+ * Did this week:
+    - Finished health implementation
+    - Fixed diagonal movement. Before it was adding x and y movement together, giving you double speed. Now it does pythagorean theorem
+    - Made it so that when health hits zero the game quits
+    - Added another map for screen transitions
+ * Still need to do:
+    - Health for enemies
+    - Make a way for the player to see the health as a texture
+    - Fight screens/enemy spawns
+ * What prevents me from doing it:
+    - Final map implementation
+    - Boss sprites / ideas on how to make boss fights different from regular encounters
+    - How to spawn enemies seperate from the room drawing function
+    - Random room generation for level design
+
+Week 5:
+ * Did this week:
+    - Added a visual indicator for player health above the inventory menu
+    - Added invincibility frames once you take damage so that you don't continuously take damage on hit
+    - Added a button to add health, can be repurposed later to be a potion, or can be limited to debugging
+    - Added a getHealth() getter command, as well as a setHealth() setter command, both of which access and alter the player's health
+ * ToDo for next week: 
+    - Add health for enemies, might not be seen in effect until weapons get further along in development
+    - Figure out how to track seperate health values for each enemy on screen
+    - Add an actual death screen / something should happen when you die instead of just incrementing the death counter
+ * What's preventing this:
+    - Could have a map texture that occurs when you lose, but that would have to be created
+    - brainstorm a way to track health values for each enemy on screen
+    - Weapon development has to be somewhat in place to test if enemies have the right amount of health compared to damage output
+
+Week 6:
+ * Did this week: 
+    - Added framework for different attack ranges for each weapon
+    - Added a folder for special enemy types (mini-bosses, bosses, etc.)
+ * ToDo for next week:
+    - I didn't do anything from the ToDo from last week, I got distracted, so do those things
+    - start work on theorycrafting what other bosses we might want other than just Bill
+    - scale weapon damage and attack range so that each weapon isn't just the same thing as the other ones
+ * What prevents this:
+    - If we want a "game over" screen, then that texture needs to be drawn and made
+
+Week 7:
+ * Did this week:
+    - Added the end game "you lose" screen
+    - Made the game end when you lose
+    - Demo Week
+ * ToDo for next week:
+    - Lots of development has been going on in the background so idk how much of this will change by next week
+    - Make it so that it either randomizes your microsoft employee number, or increments it each time you start the game
+    - Figure out textures for, and begin to program BILL
+ * What prevents me from doing this right now:
+    - I have no idea how the format for the text file is set up to try and randomize the employee number
+    - No Bill texture and also no textures for his attacks, so there's no way to test if code works or not
+
+Week 8:
+ * Did this week:
+    - made the cursor change into a custom pixmap on game start, so we can make it look however we want (except transparent)
+    - added image for additional enemy types
+    - honestly didn't do a lot this week bc it's been a really stressful week and I was getting burnt out on all fronts. sorry
+ * ToDo for next week:
+    - Start on implementation of Bill as a final boss
+    - get images uploaded
+    - get a boss arena map made
+    - figure out what attack patterns we want and how to implement them fairly
+ * What prevents this:
+    - limited knowledge on how entity behavior works
+    - consult with team for behavior/attack pattern ideas
+
+Week 9:
+ * Did this week: 
+    - made the map for the Bill boss fight
+    - made the texture for the stationary Bill boss
+    - added the creator for the Bill enemy type with a few basic attributes
+ * ToDo for next week:
+    - Finish the actual fight mechanics for the Bill fight
+    - Don't remember if this is demo week or if it's the week after, but potentially demo the game for the last time
+ * What prevents this:
+    - I've literally been in Ohio competing in WGI finals for the last 5 days lol
+    - We got 13th out of all Percussion Independant Open competitors :D
+    - If you want to watch our finals run it's this youtube link:
+      https://youtu.be/BnU6nw4rlNI

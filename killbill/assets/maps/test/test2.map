@@ -1,0 +1,46 @@
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+testmap2
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+0
+
+# Size of the map, in tiles.
+!size
+15x15
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+fit misc_bill_gate_head # (so misc/bill_gate_head.jpg)
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=0,1 0,2
+tl=misc_apple
+t=misc_house
+tr=misc_bill
+l=misc_bill_gate_head_laughing
+r=misc_bill
+bl=misc_bill_gate_head
+b=misc_shroud
+br=misc_apple
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+5,8 wall Tile[texture=misc_apple] # test comment (update: it works :) )
+7,6 bill Entity[texture=misc_bill_gate_head,attrs=move_towards_player]
+7,7 bill Entity[texture=misc_bill_gate_head,attrs=move_towards_player]
+7,8 bill Entity[texture=misc_bill_gate_head,attrs=move_towards_player]
+7,9 bill Entity[texture=misc_bill_gate_head,attrs=move_towards_player]
+7,10 bill Entity[texture=misc_bill_gate_head,attrs=move_towards_player]
+8,8 bill_laughing Entity[texture=misc_bill_gate_head_laughing,attrs=move_towards_player]
+0,1 door Door[texture=misc_house,destination=test_map]
+0,2 door Door[texture=misc_house,destination=test_map]
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+1,1

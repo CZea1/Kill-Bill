@@ -1,0 +1,91 @@
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+billroom
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+42069
+
+# Size of the map, in tiles.
+!size
+25x25
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+!objects
+12-g1/2,12-g1/2 bill Bill[lines=bill,attrs=invincible]
+
+
+# Barricades, so they at least have a chance
+20,22 wall MapObject[texture=wall_marble_l_endb,ySize=g5/16]
+20,21 wall MapObject[texture=wall_marble_l]
+20,20 wall MapObject[texture=wall_marble_l]
+20,20-g5/16 wall MapObject[texture=wall_marble_l_endt,ySize=g5/16]
+21,20+g3/4 computer DroppedItem[xSize=g1/2, ySize=g1/2, item=Computer()]
+
+18,13 wall MapObject[texture=wall_marble_l_endb,ySize=g5/16]
+18,12 wall MapObject[texture=wall_marble_l]
+18,11 wall MapObject[texture=wall_marble_l]
+18,11-g5/16 wall MapObject[texture=wall_marble_l_endt,ySize=g5/16]
+19,11+g3/4 computer DroppedItem[xSize=g1/2, ySize=g1/2, item=Computer()]
+
+6+g3/4,4+g1/2 computer DroppedItem[xSize=g1/2, ySize=g1/2, item=Computer()]
+6-g5/16,5 wall MapObject[texture=wall_marble_b_endr,xSize=g5/16]
+6,5 wall MapObject[texture=wall_marble_b]
+7,5 wall MapObject[texture=wall_marble_b]
+8,5 wall MapObject[texture=wall_marble_b_endl,xSize=g5/16]
+
+21+g3/4,4+g1/2 computer DroppedItem[xSize=g1/2, ySize=g1/2, item=Computer()]
+21-g5/16,5 wall MapObject[texture=wall_marble_b_endr,xSize=g5/16]
+21,5 wall MapObject[texture=wall_marble_b]
+22,5 wall MapObject[texture=wall_marble_b]
+23,5 wall MapObject[texture=wall_marble_b_endl,xSize=g5/16]
+
+6,11 wall MapObject[texture=wall_marble_l_endb,ySize=g5/16]
+6,10 wall MapObject[texture=wall_marble_l]
+6,9 wall MapObject[texture=wall_marble_l]
+6,9-g5/16 wall MapObject[texture=wall_marble_l_endt,ySize=g5/16]
+5+g1/2,9+g3/4 computer DroppedItem[xSize=g1/2, ySize=g1/2, item=Computer()]
+
+7,18 wall MapObject[texture=wall_marble_l_endb,ySize=g5/16]
+7,17 wall MapObject[texture=wall_marble_l]
+7,16 wall MapObject[texture=wall_marble_l]
+7,16-g5/16 wall MapObject[texture=wall_marble_l_endt,ySize=g5/16]
+6+g1/2,16+g3/4 computer DroppedItem[xSize=g1/2, ySize=g1/2, item=Computer()]
+
+14+g3/4,19 computer DroppedItem[xSize=g1/2, ySize=g1/2, item=Computer()]
+14-g5/16,18 wall MapObject[texture=wall_marble_b_endr,xSize=g5/16]
+14,18 wall MapObject[texture=wall_marble_b]
+15,18 wall MapObject[texture=wall_marble_b]
+16,18 wall MapObject[texture=wall_marble_b_endl,xSize=g5/16]
+
+14+g3/4,5+g1/2 computer DroppedItem[xSize=g1/2, ySize=g1/2, item=Computer()]
+14-g5/16,6 wall MapObject[texture=wall_marble_b_endr,xSize=g5/16]
+14,6 wall MapObject[texture=wall_marble_b]
+15,6 wall MapObject[texture=wall_marble_b]
+16,6 wall MapObject[texture=wall_marble_b_endl,xSize=g5/16]
+
+# no drops
+!drops
+
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+6,6

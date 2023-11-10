@@ -1,0 +1,160 @@
+# _____TODO_____
+# - fill with walls
+# - place doors 
+
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+server_room
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+0301
+
+# Size of the map, in tiles.
+!size
+16x30
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=7,0 8,0 7,29 8,29
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+#
+# ____Examples____
+# 5,5 enemy1 Entity[texture=misc_testenemy,attrs=move_towards_player,health=20,reach=1] 
+# 3,3 chest Chest[texture=items_chest,openedTexture=items_open_chest] 
+# 4,4 door Door[texture=misc_bill_gate_head,destination=testmap2]
+!objects
+# ___Walls___
+
+# ___Doors___
+7,0 door Door[texture=door_bottom_l_u,destination=elevator_f3_f2,spawn=4x2+g1/2]
+8,0 door Door[texture=door_bottom_r_u,destination=elevator_f3_f2,spawn=4x2+g1/2]
+7,29 door Door[texture=door_top_l_u,destination=elevator_f3_f4,spawn=1x2+g1/2]
+8,29 door Door[texture=door_top_r_u,destination=elevator_f3_f4,spawn=1x2+g1/2]
+
+#___Servers___
+1-g4/16,4 server MapObject[texture=objects_server_l1, xSize=g6/1]
+1-g4/16,5-g1/16 spaghetti MapObject[texture=objects_server_l_spaghetti2, xSize=g6/1, collidable=false, solid=false]
+
+9,4 server MapObject[texture=objects_server_r1, xSize=g6/1]
+9,5-g1/16 spaghetti MapObject[texture=objects_server_r_spaghetti2, xSize=g6/1, collidable=false, solid=false]
+
+1-g4/16,6+g1/2 server MapObject[texture=objects_server_l1, xSize=g6/1]
+1-g4/16,7+g7/16 spaghetti MapObject[texture=objects_server_l_spaghetti, xSize=g6/1, collidable=false, solid=false]
+
+9,6+g1/2 server MapObject[texture=objects_server_r1, xSize=g6/1]
+9,7+g7/16 spaghetti MapObject[texture=objects_server_r_spaghetti1, xSize=g6/1, collidable=false, solid=false]
+
+1-g4/16,9 server MapObject[texture=objects_server_l1, xSize=g6/1]
+1-g4/16,10-g1/16 spaghetti MapObject[texture=objects_server_l_spaghetti1, xSize=g6/1, collidable=false, solid=false]
+
+9,9 server MapObject[texture=objects_server_r1, xSize=g6/1]
+9,10-g1/16 spaghetti MapObject[texture=objects_server_r_spaghetti, xSize=g6/1, collidable=false, solid=false]
+
+1-g4/16,11+g1/2 server MapObject[texture=objects_server_l1, xSize=g6/1]
+1-g4/16,12+g7/16 spaghetti MapObject[texture=objects_server_l_spaghetti, xSize=g6/1, collidable=false, solid=false]
+
+9,11+g1/2 server MapObject[texture=objects_server_r1, xSize=g6/1]
+9,12+g7/16 spaghetti MapObject[texture=objects_server_r_spaghetti1, xSize=g6/1, collidable=false, solid=false]
+
+1-g4/16,14 server MapObject[texture=objects_server_l1, xSize=g6/1]
+1-g4/16,15-g1/16 spaghetti MapObject[texture=objects_server_l_spaghetti2, xSize=g6/1, collidable=false, solid=false]
+
+9,14 server MapObject[texture=objects_server_r1, xSize=g6/1]
+9,15-g1/16 spaghetti MapObject[texture=objects_server_r_spaghetti2, xSize=g6/1, collidable=false, solid=false]
+
+1-g4/16,16+g1/2 server MapObject[texture=objects_server_l1, xSize=g6/1]
+1-g4/16,17+g7/16 spaghetti MapObject[texture=objects_server_l_spaghetti1, xSize=g6/1, collidable=false, solid=false]
+
+9,16+g1/2 server MapObject[texture=objects_server_r1, xSize=g6/1]
+9,17+g7/16 spaghetti MapObject[texture=objects_server_r_spaghetti1, xSize=g6/1, collidable=false, solid=false]
+
+1-g4/16,19 server MapObject[texture=objects_server_l1, xSize=g6/1]
+1-g4/16,20-g1/16 spaghetti MapObject[texture=objects_server_l_spaghetti2, xSize=g6/1, collidable=false, solid=false]
+
+9,19 server MapObject[texture=objects_server_r1, xSize=g6/1]
+9,20-g1/16 spaghetti MapObject[texture=objects_server_r_spaghetti, xSize=g6/1, collidable=false, solid=false]
+
+1-g4/16,21+g1/2 server MapObject[texture=objects_server_l1, xSize=g6/1]
+1-g4/16,22+g7/16 spaghetti MapObject[texture=objects_server_l_spaghetti, xSize=g6/1, collidable=false, solid=false]
+
+9,21+g1/2 server MapObject[texture=objects_server_r1, xSize=g6/1]
+9,22+g7/16 spaghetti MapObject[texture=objects_server_r_spaghetti2, xSize=g6/1, collidable=false, solid=false]
+
+1-g4/16,24 server MapObject[texture=objects_server_l1, xSize=g6/1]
+1-g4/16,25-g1/16 spaghetti MapObject[texture=objects_server_l_spaghetti1, xSize=g6/1, collidable=false, solid=false]
+
+9,24 server MapObject[texture=objects_server_r1, xSize=g6/1]
+9,25-g1/16 spaghetti MapObject[texture=objects_server_r_spaghetti2, xSize=g6/1, collidable=false, solid=false]
+
+1-g4/16,26+g1/2 server MapObject[texture=objects_server_l1, xSize=g6/1]
+1-g4/16,27+g7/16 spaghetti MapObject[texture=objects_server_l_spaghetti, xSize=g6/1, collidable=false, solid=false]
+
+9,26+g1/2 server MapObject[texture=objects_server_r1, xSize=g6/1]
+9,27+g7/16 spaghetti MapObject[texture=objects_server_r_spaghetti1, xSize=g6/1, collidable=false, solid=false]
+#3,3-13 server_col_1 MapObject[texture=objects_server]
+#4,3-13 server_col_2 MapObject[texture=objects_server]
+#6,3-13 server_col_3 MapObject[texture=objects_server]
+#7,3-13 server_col_4 MapObject[texture=objects_server]
+#9,3-13 server_col_5 MapObject[texture=objects_server]
+#10,3-13 server_col_6 MapObject[texture=objects_server]
+
+
+2-g1/4,1 chair MapObject[texture=objects_chair, solid=false, rotation=270, collidable=false]
+2-g1/4,2 chair MapObject[texture=objects_chair, solid=false, rotation=270, collidable=false]
+1-g4/16,1 table MapObject[texture=desks_wood_v_2, solid=false, ySize=g2/1]
+1-g1/4,2-g1/8 monitor MapObject[texture=objects_monitor, xSize=g, ySize=g1/4, collidable=false, rotation=270]
+
+5,1 table Tile[texture=objects_ms_table, solid=false]
+5,1 chest Chest[lootTable=random_weapon]
+4,1 chair MapObject[texture=objects_chair, solid=false, rotation=90, collidable=false]
+5,2 chair MapObject[texture=objects_chair, solid=false, collidable=false]
+6,1 chair MapObject[texture=objects_chair, solid=false, rotation=270, collidable=false]
+
+14,1 chair MapObject[texture=objects_chair, solid=false, rotation=270, collidable=false]
+14,3 enemy MicrosoftEmployee[attrs=move_towards_player]
+1,8 enemy MicrosoftEmployee[attrs=move_towards_player]
+14,8 chest Chest[lootTable=random_weapon]
+1,20 enemy MicrosoftEmployee[attrs=move_towards_player]
+14,25 enemy MicrosoftEmployee[attrs=move_towards_player]
+3,28 enemy SecurityRobot[attrs=move_towards_player]
+11,28 enemy SecurityRobot[attrs=move_towards_player]
+1,15 enemy SecurityRobot[attrs=move_towards_player]
+1,18 chest Chest[lootTable=random_weapon]
+
+
+#___Items___
+#2,5 desk MapObject[texture=objects_desk_wooden_h_2,xSize=g2/1, ySize=g1/1]
+
+#2+g1/16,5+g6/16 plant MapObject[texture=objects_plant_blue,xSize=g1/2, ySize=g1/2,collidable=false]
+#3+g8/16,5+g7/16 plant MapObject[texture=objects_pencil_holder,xSize=g7/16, ySize=g7/16,collidable=false]
+#2+g1/2,5+g7/16 monitor MapObject[texture=objects_monitor, rotation=180, xSize=g, ySize=g1/4, collidable=false, solid=false]
+
+# ___Enemies___
+
+# ___Loot___
+
+# What drops when last enemy dies
+!drops
+Microsauce[]
+Billyjuice[]
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+1,1

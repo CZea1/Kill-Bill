@@ -1,0 +1,150 @@
+# TEXTURES TO CREATE:
+# x long desk
+# x monitor
+# x keyboard
+# x some plants
+# x water cooler
+# x filing cabinet
+# x tv stand
+# x couches
+# x janitor closet stuff
+# * security camera
+# x computers
+# x phone
+
+# -------- DOORS --------
+#        -> TOP <-
+1,1 door Door[texture=door_top_l, openedTexture=door_top_l_u, destination=dest_room, key=yes, spawn=1x1g1/2]
+1,1 door Door[texture=door_top_r, openedTexture=door_top_r_u, destination=dest_room, key=yes, spawn=1x1g1/2]
+
+1,1 door Door[texture=door_top_l_u, destination=dest_room, spawn=1x1g1/2]
+1,1 door Door[texture=door_top_r_u, destination=dest_room, spawn=1x1g1/2]
+
+#       -> BOTTOM <-
+1,1 door Door[texture=door_bottom_l, openedTexture=door_bottom_l_u, destination=dest_room, key=yes, spawn=1x1g1/2]
+1,1 door Door[texture=door_bottom_r, openedTexture=door_bottom_r_u, destination=dest_room, key=yes, spawn=1x1g1/2]
+
+1,1 door Door[texture=door_bottom_l_u, destination=dest_room, spawn=1x1g1/2]
+1,1 door Door[texture=door_bottom_r_u, destination=dest_room, spawn=1x1g1/2]
+
+#       -> RIGHT <-
+1,1 door Door[texture=door_right_b, openedTexture=door_right_b_u, destination=dest_room, key=yes, spawn=1x1g1/2]
+1,1 door Door[texture=door_right_t, openedTexture=door_right_t_u, destination=dest_room, key=yes, spawn=1x1g1/2]
+
+1,1 door Door[texture=door_right_b_u, destination=dest_room, spawn=1x1g1/2]
+1,1 door Door[texture=door_right_t_u, destination=dest_room, spawn=1x1g1/2]
+
+#       -> LEFT <-
+1,1 door Door[texture=door_left_b, openedTexture=door_left_b_u, destination=dest_room, key=yes, spawn=1x1g1/2]
+1,1 door Door[texture=door_left_t, openedTexture=door_left_t_u, destination=dest_room, key=yes, spawn=1x1g1/2]
+
+1,1 door Door[texture=door_left_b_u, destination=dest_room, spawn=1x1g1/2]
+1,1 door Door[texture=door_left_t_u, destination=dest_room, spawn=1x1g1/2]
+
+
+# -------- OBJECTS --------
+# chest
+1,1 chest Chest[lootTable=random_weapon] # or basic_weapon (early game)
+
+# vending machine
+1,1 vend Chest[texture=objects_vending_machine, openedTexture=objects_vending_machine_opened, lootTable=vending_machine]
+
+# conference table (5x3)
+1,1 table MapObject[texture=objects_table, xSize=g3/1, ySize=g5/1, solid=false]
+
+# long desk (1x4)
+1,1 table MapObject[xSize=g1/1, ySize=g4/1, solid=false]
+
+# table (1x1)
+1,1 table MapObject[texture=desks_wood_v_1, solid=false]
+
+# table (1x2)
+1,1 table MapObject[texture=desks_wood_v_2, solid=false, ySize=g2/1]
+
+# table (1x3)
+1,1 table MapObject[texture=desks_wood_v_3, solid=false, ySize=g3/1]
+
+
+# table (1x1)
+1,1 table MapObject[texture=desks_wood_h_1, solid=false]
+
+# table (2x1)
+1,1 table MapObject[texture=desks_wood_h_2, solid=false, xSize=g2/1]
+
+# table (3x1)
+1,1 table MapObject[texture=desks_wood_h_3, solid=false, xSize=g3/1]
+
+# small desk (1x1)
+1,1 table Tile[texture=objects_ms_table, solid=false]
+
+# monitor (1x1/4)
+1,1 monitor MapObject[texture=objects_monitor, xSize=g, ySize=g1/4, collidable=false]
+
+# keyboard (1/2x1/2)
+1,1 keyboard MapObject[texture=items_keyboard, xSize=g1/2, ySize=g1/2, collidable=false]
+
+# chair
+1,1 chair MapObject[texture=objects_chair, collidable=false]
+
+# floor plant 1
+1,1 plant MapObject[texture=objects_floor_plant, collidable=false]
+
+# floor plant 1 collision pot
+1+g5/16,1+g5/16 pot MapObject[texture=objects_floor_plant_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+
+# floor plant 2
+1,1 plant MapObject[texture=objects_floor_tree, collidable=false]
+
+# floor plant 2 collision pot
+1+g5/16,1+g5/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+
+ 
+# -------- WALLS --------
+# left
+1,1 wall Tile[texture=wall_marble_l]
+
+# right
+1,1 wall Tile[texture=wall_marble_r]
+
+# top
+1,1 wall Tile[texture=wall_marble_t]
+
+# bottom
+1,1 wall Tile[texture=wall_marble_b]
+
+# bottom left corner
+1,1 wall Tile[texture=wall_marble_bl]
+
+# bottom right corner
+1,1 wall Tile[texture=wall_marble_br]
+
+# top left corner
+1,1 wall Tile[texture=wall_marble_tl]
+
+# top right corner
+1,1 wall Tile[texture=wall_marble_tr]
+
+
+#    endl  endr
+#       v  v
+# ######|  |######
+
+# bottom/top, end left
+1,1 doorway MapObject[texture=wall_marble_b_endl, xSize=g5/16, ySize=g]
+
+# bottom/top, end right
+3-g5/16,1 doorway MapObject[texture=wall_marble_b_endr, xSize=g5/16, ySize=g]
+
+# #
+# #
+# ~ < endt
+#
+# _ < endb
+# #
+# #
+
+# left/right, end bottom
+1,1 doorway MapObject[texture=wall_marble_l_endb, xSize=g, ySize=g5/16]
+
+# left/right, end top
+1,3-g5/16 doorway MapObject[texture=wall_marble_l_endt, xSize=g, ySize=g5/16]

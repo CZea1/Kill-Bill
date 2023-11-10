@@ -1,0 +1,284 @@
+
+# Name of the map. This will be used to switch maps later (ie Door[destination=other_map]).
+!name
+office_1
+
+# Level ID. Irrelevant for now, and possibly forever.
+!level
+0204
+
+# Size of the map, in tiles.
+!size
+20x16
+ 
+# Map background. Loaded via texture store -- so, this is [folder_]filename
+!background
+tile floor_concrete
+
+# Autogenerates walls -- side=texture_name. Exclude directive (for doors) must be first.
+!walls
+exclude=0,7 0,8 19,7 19,8 12,15 13,15 13,0 12,0
+tl=wall_marble_tl
+t=wall_marble_t
+tr=wall_marble_tr
+l=wall_marble_l
+r=wall_marble_r
+bl=wall_marble_bl
+b=wall_marble_b
+br=wall_marble_br
+
+# Each object in the map.
+# Format: x,y name ObjectClass[args]
+# name is arbitrary, used for identification in extra code later
+# doesn't work with any object class right away -- ask Camden to register it
+#
+# ____Examples____
+# 5,5 enemy1 Entity[texture=misc_testenemy,attrs=move_towards_player,health=20,reach=1] 
+# 3,3 chest Chest[texture=items_chest,openedTexture=items_open_chest] 
+# 4,4 door Door[texture=misc_bill_gate_head,destination=testmap2]
+!objects
+
+# ___Elevator to Floor 1___
+0,7 door Door[texture=door_left_b_u,destination=elevator_f2_f1,spawn=4x2+g1/2]
+0,8 door Door[texture=door_left_t_u,destination=elevator_f2_f1,spawn=4x2+g1/2]
+
+#___Elevator to Floor 3___
+19,7 elevator_f3_door Door[texture=door_right_b,openedTexture=door_right_b_u,key=yes,destination=elevator_f2_f3,spawn=1x2+g1/2]
+19,8 elevator_f3_door Door[texture=door_right_t,openedTexture=door_right_t_u,key=yes,destination=elevator_f2_f3,spawn=1x2+g1/2]
+
+#___Janitor Closet___
+12,15 door Door[texture=door_top_l_u,destination=janitor_closet_1,spawn=2+g1/2x1]
+13,15 door Door[texture=door_top_r_u,destination=janitor_closet_1,spawn=2+g1/2x1]
+
+#___Lounge___
+12,0 manager_office_door Door[texture=door_bottom_l,openedTexture=door_bottom_l_u,key=yes,destination=lounge,spawn=4+g1/2x6]
+13,0 manager_office_door Door[texture=door_bottom_r,openedTexture=door_bottom_r_u,key=yes,destination=lounge,spawn=4+g1/2x6]
+
+# TODO: Elevator to floor 4
+
+#___Desks and Chairs___
+#1-g2/16,2+g2/16 desk MapObject[texture=desks_wood_h_2,xSize=g2/1,ySize=g1/1]
+#2-g3/16,1+g1/16 chair MapObject[texture=objects_chair, rotation=180, solid=false, collidable=false]
+#4,2+g2/16 desk MapObject[texture=desks_wood_h_3,xSize=g3/1,ySize=g1/1]
+#5,3+g2/16 chair MapObject[texture=objects_chair,rotation=0,solid=false,collidable=false]
+#8+g2/16,2+g2/16 desk MapObject[texture=desks_wood_h_2,xSize=g2/1,ySize=g1/1]
+#12,3 chair MapObject[texture=objects_chair,solid=false,collidable=false]
+#8+g10/16,1+g1/16 chair MapObject[texture=objects_chair,rotation=180,solid=false,collidable=false]
+#11+g4/16,2+g2/16 desk MapObject[texture=desks_wood_h_3,xSize=g3/1,ySize=g1/1]
+#9,8+g2/16 desk MapObject[texture=desks_wood_h_3,xSize=g3/1,ySize=g1/1]
+#9,5 desk MapObject[texture=desks_wood_h_3,xSize=g3/1,ySize=g1/1]
+#13,7+g2/16 desk MapObject[texture=desks_wood_v_2,xSize=g1/1,ySize=g2/1]
+
+#___Desk Group 1___
+4,10 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+5-g2/16,10 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+3-g1/16,11 chair MapObject[texture=objects_chair, rotation=90, solid=false, collidable=false]
+6-g1/16,11 chair MapObject[texture=objects_chair, rotation=270, solid=false, collidable=false]
+4+g2/16,11+g6/16 monitor MapObject[texture=objects_monitor, rotation=90, xSize=g, ySize=g1/4, collidable=false, solid=true]
+5-g6/16,11+g6/16 monitor MapObject[texture=objects_monitor, rotation=270, xSize=g, ySize=g1/4, collidable=false, solid=true]
+4+g1/16,11+g6/16 kb DroppedItem[item=Keyboard()]
+5+g3/16,11+g2/16 kb DroppedItem[item=Keyboard()]
+4+g3/16,11+g2/16 mouse MapObject[texture=objects_mouse, rotation=270, solid=false, xSize=g1/6, ySize=g1/6]
+5+g6/16,11+g12/16 mouse MapObject[texture=objects_mouse, rotation=90, solid=false, xSize=g1/6, ySize=g1/6]
+4+g12/16,13+g1/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+4+g7/16,13-g4/16 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+4+g12/16,9+g11/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+4+g7/16,9+g6/16 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+4+g2/16,12+g3/16 document MapObject[texture=objects_document_2, rotation=290, xSize=g1/2, ySize=g1/2]
+4+g6/16,12+g6/16 document MapObject[texture=objects_document_2, rotation=60, xSize=g1/2, ySize=g1/2]
+5+g1/16,12+g3/16 document MapObject[texture=objects_document_2, rotation=40, xSize=g1/2, ySize=g1/2]
+4+g14/16,12+g3/16 document MapObject[texture=objects_document_2, rotation=230, xSize=g1/2, ySize=g1/2]
+4+g8/16,12+g3/16 document MapObject[texture=objects_document_2, rotation=170, xSize=g1/2, ySize=g1/2]
+5+g1/16,12+g7/16 document MapObject[texture=objects_document_2, rotation=100, xSize=g1/2, ySize=g1/2]
+4+g3/16,10+g8/16 mug MapObject[texture=objects_mug_black, rotation=120, xSize=g10/16, ySize=g10/16]
+4-g2/16,10+g5/16 mug MapObject[texture=objects_mug_black, rotation=190, xSize=g10/16, ySize=g10/16]
+4-g1/16,10+g10/16 mug MapObject[texture=objects_mug_black, rotation=120, xSize=g10/16, ySize=g10/16]
+4+g2/16,10+g2/16 desk_plant MapObject[texture=objects_desk_plant_red_w, xSize=g3/4, ySize=g3/4]
+5+g3/16,10+g8/16 mug MapObject[texture=objects_mug_white, rotation=100, xSize=g10/16, ySize=g10/16]
+5-g2/16,10+g5/16 mug MapObject[texture=objects_mug_white, rotation=210, xSize=g10/16, ySize=g10/16]
+5-g1/16,10+g10/16 mug MapObject[texture=objects_mug_black, rotation=80, xSize=g10/16, ySize=g10/16]
+5+g3/16,10+g4/16 mug MapObject[texture=objects_mug_black, rotation=290, xSize=g10/16, ySize=g10/16]
+5,10+g1/16 mug MapObject[texture=objects_mug_white, rotation=80, xSize=g10/16, ySize=g10/16]
+
+
+
+
+#___Desk Group 2___
+9,10 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+10-g2/16,10 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+8-g1/16,11 chair MapObject[texture=objects_chair, rotation=90, solid=false, collidable=false]
+11-g1/16,11 chair MapObject[texture=objects_chair, rotation=270, solid=false, collidable=false]
+9+g2/16,11+g6/16 monitor MapObject[texture=objects_monitor, rotation=90, xSize=g, ySize=g1/4, collidable=false, solid=true]
+10-g6/16,11+g6/16 monitor MapObject[texture=objects_monitor, rotation=270, xSize=g, ySize=g1/4, collidable=false,solid=true]
+9+g1/16,11+g6/16 kb DroppedItem[item=Keyboard()]
+10+g3/16,11+g2/16 kb DroppedItem[item=Keyboard()]
+9+g3/16,11+g2/16 mouse MapObject[texture=objects_mouse, rotation=270, solid=false, xSize=g1/6, ySize=g1/6]
+10+g6/16,11+g12/16 mouse MapObject[texture=objects_mouse, rotation=90, solid=false, xSize=g1/6, ySize=g1/6]
+9+g12/16,13+g1/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+9+g7/16,13-g4/16 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+9+g12/16,9+g11/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+9+g7/16,9+g6/16 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+
+9-g2/16,10+g4/16 desk_plant MapObject[texture=objects_desk_cactus_pink_w, xSize=g3/4, ySize=g3/4]
+9+g5/16,10+g7/16 desk_plant MapObject[texture=objects_desk_cactus_pink_w, xSize=g3/4, ySize=g3/4]
+9+g3/16,10 desk_plant MapObject[texture=objects_desk_cactus_purple_w, xSize=g3/4, ySize=g3/4]
+
+9-g2/16,12+g3/16 desk_plant MapObject[texture=objects_desk_cactus_pink_w, xSize=g3/4, ySize=g3/4]
+9+g5/16,12+g6/16 desk_plant MapObject[texture=objects_desk_cactus_purple_w, xSize=g3/4, ySize=g3/4]
+9+g3/16,12-g1/16 desk_plant MapObject[texture=objects_desk_cactus_purple_w, xSize=g3/4, ySize=g3/4]
+
+10-g2/16,12+g4/16 plant MapObject[texture=objects_desk_plant_blue_w,xSize=g3/4,ySize=g3/4]
+10+g3/16,12-g1/16 mug MapObject[texture=objects_mug_white,rotation=320, xSize=g10/16, ySize=g10/16]
+10+g2/16,10+g5/16 document MapObject[texture=objects_document_2,rotation=90,xSize=g1/2, ySize=g1/2]
+
+
+
+#___Desk Group 3____
+14,10 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+15-g2/16,10 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+13-g1/16,11 chair MapObject[texture=objects_chair, rotation=90, solid=false, collidable=false]
+16-g1/16,11 chair MapObject[texture=objects_chair, rotation=270, solid=false, collidable=false]
+14+g2/16,11+g6/16 monitor MapObject[texture=objects_monitor, rotation=90, xSize=g, ySize=g1/4, collidable=false,solid=true]
+15-g6/16,11+g6/16 monitor MapObject[texture=objects_monitor, rotation=270, xSize=g, ySize=g1/4, collidable=false,solid=true]
+14+g1/16,11+g6/16 kb DroppedItem[item=Keyboard()]
+15+g3/16,11+g2/16 kb DroppedItem[item=Keyboard()]
+14+g3/16,11+g2/16 mouse MapObject[texture=objects_mouse, rotation=270, solid=false, xSize=g1/6, ySize=g1/6]
+15+g6/16,11+g12/16 mouse MapObject[texture=objects_mouse, rotation=90, solid=false, xSize=g1/6, ySize=g1/6]
+14+g12/16,13+g1/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+14+g7/16,13-g4/16 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+14+g12/16,9+g11/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+14+g7/16,9+g5/16 chest Chest[lootTable=random_weapon, collidable=false]
+14+g3/16,12+g8/16 plushie DroppedItem[item=Plushie(), rotation=290, xSize=g6/16, ySize=g6/16]
+14+g3/16,12-g1/16 desk_plant MapObject[texture=objects_desk_cactus_pink_w, xSize=g3/4, ySize=g3/4]
+14+g2/16,10+g5/16 document MapObject[texture=objects_document_2,rotation=300,xSize=g1/2, ySize=g1/2]
+14+g14/16,12+g3/16 desk_plant MapObject[texture=objects_desk_plant_red_w, xSize=g3/4, ySize=g3/4]
+14+g16/16,10+g3/16 desk_plant MapObject[texture=objects_desk_plant_blue_w, xSize=g3/4, ySize=g3/4]
+
+
+
+
+
+
+#___Desk Group 4___
+4,3 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+5-g2/16,3 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+3-g1/16,4 chair MapObject[texture=objects_chair, rotation=90, solid=false, collidable=false]
+6-g1/16,4 chair MapObject[texture=objects_chair, rotation=270, solid=false, collidable=false]
+4+g2/16,4+g6/16 monitor MapObject[texture=objects_monitor, rotation=90, xSize=g, ySize=g1/4, collidable=false, solid=true]
+5-g6/16,4+g6/16 monitor MapObject[texture=objects_monitor, rotation=270, xSize=g, ySize=g1/4, collidable=false, solid=true]
+4+g1/16,4+g6/16 kb DroppedItem[item=Keyboard()]
+5+g3/16,4+g2/16 kb DroppedItem[item=Keyboard()]
+4+g3/16,4+g2/16 mouse MapObject[texture=objects_mouse, rotation=270, solid=false, xSize=g1/6, ySize=g1/6]
+5+g6/16,4+g12/16 mouse MapObject[texture=objects_mouse, rotation=90, solid=false, xSize=g1/6, ySize=g1/6]
+4+g12/16,6+g1/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+4+g7/16,6-g4/16 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+4+g12/16,2+g11/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+4+g7/16,2+g6/16 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+4+g1/16,3+g8/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=280]
+4+g2/16,3+g3/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=130]
+5+g1/16,5+g8/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=280]
+5+g2/16,5+g2/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=130]
+4,5+g1/16 mug MapObject[texture=objects_mug_white, xSize=g3/4, ySize=g3/4, rotation=30]
+5,3+g7/16 mug MapObject[texture=objects_mug_white, xSize=g3/4, ySize=g3/4, rotation=130]
+
+
+#___Desk Group 5___
+9,3 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+10-g2/16,3 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+8-g1/16,4 chair MapObject[texture=objects_chair, rotation=90, solid=false, collidable=false]
+11-g1/16,4 chair MapObject[texture=objects_chair, rotation=270, solid=false, collidable=false]
+9+g2/16,4+g6/16 monitor MapObject[texture=objects_monitor, rotation=90, xSize=g, ySize=g1/4, collidable=false, solid=true]
+10-g6/16,4+g6/16 monitor MapObject[texture=objects_monitor, rotation=270, xSize=g, ySize=g1/4, collidable=false, solid=true]
+9+g1/16,4+g6/16 kb DroppedItem[item=Keyboard()]
+10+g3/16,4+g2/16 kb DroppedItem[item=Keyboard()]
+9+g3/16,4+g2/16 mouse MapObject[texture=objects_mouse, rotation=270, solid=false, xSize=g1/6, ySize=g1/6]
+10+g6/16,4+g12/16 mouse MapObject[texture=objects_mouse, rotation=90, solid=false, xSize=g1/6, ySize=g1/6]
+9+g12/16,6+g1/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+9+g7/16,6-g4/16 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+9+g12/16,2+g11/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+9+g7/16,2+g5/16 chest Chest[lootTable=random_weapon, collidable=false]
+9+g3/16,3 desk_plant MapObject[texture=objects_desk_cactus_purple_w, xSize=g3/4, ySize=g3/4]
+10+g3/16,3+g4/16 desk_plant MapObject[texture=objects_desk_cactus_pink_w, xSize=g3/4, ySize=g3/4]
+9+g10/16,3+g2/16 desk_plant MapObject[texture=objects_desk_plant_red_w, xSize=g3/4, ySize=g3/4]
+10,5 mug MapObject[texture=objects_mug_white, xSize=g3/4, ySize=g3/4]
+9,3+g6/16 mug MapObject[texture=objects_mug_white, xSize=g3/4, ySize=g3/4, rotation=30]
+9+g2/16,5+g3/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=20]
+
+#___Desk Group 6___
+14,3 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+15-g2/16,3 desk MapObject[texture=desks_wood_v_3,xSize=g1/1,ySize=g3/1, solid=false]
+13-g1/16,4 chair MapObject[texture=objects_chair, rotation=90, solid=false, collidable=false]
+16-g1/16,4 chair MapObject[texture=objects_chair, rotation=270, solid=false, collidable=false]
+14+g2/16,4+g6/16 monitor MapObject[texture=objects_monitor, rotation=90, xSize=g, ySize=g1/4, collidable=false, solid=true]
+15-g6/16,4+g6/16 monitor MapObject[texture=objects_monitor, rotation=270, xSize=g, ySize=g1/4, collidable=false, solid=true]
+14+g1/16,4+g6/16 kb DroppedItem[item=Keyboard()]
+15+g3/16,4+g2/16 kb DroppedItem[item=Keyboard()]
+14+g3/16,4+g2/16 mouse MapObject[texture=objects_mouse, rotation=270, solid=false, xSize=g1/6, ySize=g1/6]
+15+g6/16,4+g12/16 mouse MapObject[texture=objects_mouse, rotation=90, solid=false, xSize=g1/6, ySize=g1/6]
+14+g6/16,5+g5/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=50]
+14+g2/16,5+g3/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=20]
+14+g6/16,3+g7/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=250]
+14+g2/16,3+g3/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=300]
+15+g1/16,3+g8/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=280]
+15+g2/16,3+g3/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=130]
+15+g1/16,5+g6/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=230]
+15+g2/16,5+g3/16 document MapObject[texture=objects_document_2, xSize=g1/2, ySize=g1/2,rotation=100]
+14+g10/16,3+g2/16 desk_plant MapObject[texture=objects_desk_plant_blue_w, xSize=g3/4, ySize=g3/4]
+14+g8/16,5+g1/16 desk_plant MapObject[texture=objects_desk_plant_blue_w, xSize=g3/4, ySize=g3/4]
+14+g12/16,6+g1/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+14+g7/16,6-g4/16 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+14+g12/16,2+g11/16 pot MapObject[texture=objects_floor_plant_pot, xSize=g6/16, ySize=g6/16, collidable=true]
+14+g7/16,2+g6/16 plant MapObject[texture=objects_floor_plant, collidable=false, solid=true]
+
+
+
+#___Water Fountains___
+1+g2/16,11+g4/16 collision_object MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+1-g1/16,11+g0/16 spill MapObject[texture=objects_water_spill_1, rotation=270,collidable=false, solid=false,]
+1,11+g0/16 water_fountain MapObject[texture=objects_water_fountain, rotation=90, collidable=false, xSize=g12/16, ySize=g12/16]
+1+g2/16,12+g2/16 collision_object MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+1-g1/16,12+g0/16 spill MapObject[texture=objects_water_spill_1, rotation=180,collidable=false, solid=false,]
+1,12+g0/16 water_fountain MapObject[texture=objects_water_fountain, rotation=90, collidable=false, xSize=g12/16, ySize=g12/16]
+
+#___Misc Plants___
+1+g3/16,9+g3/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+1-g2/16,9-g2/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+1+g3/16,6+g5/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+1-g2/16,6-g0/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+1+g3/16,14+g7/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+1-g2/16,14+g2/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+18+g6/16,14+g7/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+18+g1/16,14+g2/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+18+g6/16,1+g4/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+18+g1/16,1-g1/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+1+g3/16,1+g4/16 pot MapObject[texture=objects_floor_tree_pot, collidable=true, xSize=g6/16, ySize=g6/16]
+1-g2/16,1-g1/16 plant MapObject[texture=objects_floor_tree,collidable=false]
+
+
+#___Vending Machine___
+7-g3/16,14+g4/16 vend Chest[texture=objects_vending_machine, openedTexture=objects_vending_machine_opened, lootTable=vending_machine]
+
+#___Enemies___
+3,4 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=270]
+6-g2/16,4 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=90]
+#8,4 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=270]
+11-g2/16,4 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=90]
+#13,4 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=270]
+16-g2/16,4 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=90]
+
+#3,11 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=270]
+6-g2/16,11 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=90]
+8,11 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=270]
+#11-g2/16,11 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=90]
+13,11 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=270]
+16-g2/16,11 enemy1 MicrosoftEmployee[attrs=move_towards_player,rotation=90]
+
+# ___Loot___
+
+# What drops when last enemy dies
+!drops
+Key[to=manager_office_door]
+
+# Where (in tiles) the player will spawn in.
+!player_spawn
+9,7

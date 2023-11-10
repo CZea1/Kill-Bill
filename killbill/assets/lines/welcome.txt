@@ -1,0 +1,27 @@
+!play main_microsoft2
+none auto [Microsoft Employee #92746] Welcome to Microsoft HQ!
+!play main_microsoft4
+none auto What brings you in tod--
+!play main_phonebuzz1
+none 0.75
+!hold Item[texture=items_phone]
+!play main_phonebuzz1
+none 0.5
+!play main_microsoft2
+none auto So sorry, hold on just a moment please. I have to take this.
+none 1.0
+!play main_microsoft1
+none 0.3
+!play main_microsoft4
+none 0.5
+!play main_microsoft3
+none 0.4
+!play main_microsoft5
+none 0.6
+!hold none
+!play main_msft
+none 1.0 KILL.
+!hold Item[texture=weapons_spear_held]
+none 0.5
+!unattrall invincible
+!attrall move_towards_player

@@ -1,0 +1,8 @@
+# Don't use this. Assigns an equal weight to all weapons.
+auto Axe[]
+auto GreatSword[]
+auto Hammer[]
+auto Keyboard[]
+auto PenguinLauncher[]
+auto Plushie[]
+auto Spear[]

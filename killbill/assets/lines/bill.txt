@@ -1,0 +1,16 @@
+none auto [Bill] Ah... There you are, Melinda.
+none auto I've been expecting you.
+none 1.5
+none auto You know, it's a miracle you even made it up here.
+none auto I had security on high alert about you.
+none 1.0
+none auto I'm quite sad to see you here. I thought you knew better.
+none auto You know well that it's far too late to stop me.
+none auto The computers are mine, Melinda. I deserve them.
+none auto I will have them all.
+none 1.5
+none auto I wish you could have been a part of this.
+none auto I'm sorry, Melinda, but it's time to go.
+none auto Goodbye.
+none 0.5
+!unattr invincible
